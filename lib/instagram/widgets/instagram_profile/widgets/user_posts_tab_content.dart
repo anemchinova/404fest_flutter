@@ -18,7 +18,7 @@ class UserPostsTabContent extends StatelessWidget {
             ),
             childCount: 50,
           ),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
             crossAxisSpacing: 1,
             mainAxisSpacing: 1,

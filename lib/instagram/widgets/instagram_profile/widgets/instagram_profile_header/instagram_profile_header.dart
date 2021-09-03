@@ -15,7 +15,7 @@ class InstagramProfileHeader extends StatelessWidget {
       children: [
         SliverToBoxAdapter(
           child: Column(
-            children: [
+            children: const [
               ProfileInfographics(),
               ProfileDescription(),
               ProfileButtonBar(),
@@ -23,7 +23,7 @@ class InstagramProfileHeader extends StatelessWidget {
             ],
           ),
         ),
-        SliverPinnedHeader(
+        const SliverPinnedHeader(
           child: DecoratedBox(
             decoration: BoxDecoration(color: Colors.black),
             child: TabBar(

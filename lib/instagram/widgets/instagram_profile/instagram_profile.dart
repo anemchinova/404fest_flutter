@@ -16,11 +16,11 @@ class InstagramProfile extends StatelessWidget {
           return <Widget>[
             SliverOverlapAbsorber(
               handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
-              sliver: InstagramProfileHeader(),
+              sliver: const InstagramProfileHeader(),
             ),
           ];
         },
-        body: TabBarView(
+        body: const TabBarView(
           children: [
             UserPostsTabContent(),
             MentionsTabContent(),

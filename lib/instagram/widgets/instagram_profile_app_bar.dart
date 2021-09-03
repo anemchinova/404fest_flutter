@@ -10,20 +10,20 @@ class InstagramProfileAppBar extends StatelessWidget
       child: SizedBox(
         height: preferredSize.height,
         child: DecoratedBox(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.black,
           ),
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24),
+            padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   'Mercury Employee',
                   style: TextStyle(fontSize: 18),
                 ),
                 Row(
-                  children: [
+                  children: const [
                     Icon(Icons.plus_one_outlined),
                     SizedBox(width: 24),
                     Icon(Icons.menu),

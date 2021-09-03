@@ -8,19 +8,19 @@ class InstagramFakeBottomBar extends StatelessWidget {
     return SizedBox(
       height: 48,
       child: DecoratedBox(
-        decoration: BoxDecoration(color: Colors.black),
+        decoration: const BoxDecoration(color: Colors.black),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 28),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Icons.home_outlined,
-              Icons.search_outlined,
-              Icons.movie_outlined,
-              Icons.favorite_border,
-              Icons.person,
-            ].map((icon) => Icon(icon, size: 30)).toList(),
+            children: const [
+              Icon(Icons.home_outlined, size: 30),
+              Icon(Icons.search_outlined, size: 30),
+              Icon(Icons.movie_outlined, size: 30),
+              Icon(Icons.favorite_border, size: 30),
+              Icon(Icons.person, size: 30),
+            ],
           ),
         ),
       ),

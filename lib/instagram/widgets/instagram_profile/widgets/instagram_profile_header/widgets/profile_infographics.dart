@@ -13,7 +13,7 @@ class ProfileInfographics extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            CircleAvatar(
+            const CircleAvatar(
               radius: 44,
               backgroundImage: NetworkImage(
                 'https://habrastorage.org/getpro/moikrug/uploads/company/100/006/794/8/logo/medium_e36c0be3f01adbb64b3d8c052265629d.png',
