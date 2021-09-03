@@ -5,8 +5,18 @@ class ProfileDescription extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: null,
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const [
+          Text('Имя Сотрудника'),
+          SizedBox(height: 4),
+          Text('Очень длинный текст про то, какой сотрудник молодец, как '
+              'ему круто работается в Mercury Development и про то, '
+              'что 404 - офигенный фест'),
+        ],
+      ),
     );
   }
 }
