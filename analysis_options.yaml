@@ -4,6 +4,10 @@ analyzer:
   exclude:
     - lib/instagram/widgets/nested_scroll_view/**
 
+  strong-mode:
+    implicit-casts: false
+    implicit-dynamic: false
+
   errors:
     always_declare_return_types: error
     missing_return: error
