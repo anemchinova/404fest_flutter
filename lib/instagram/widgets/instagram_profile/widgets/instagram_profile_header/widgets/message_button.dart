@@ -1,6 +1,5 @@
+import 'package:fest404/instagram/widgets/instagram_outlined_button.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../instagram_outlined_button.dart';
 
 class MessageButton extends StatelessWidget {
   const MessageButton({
