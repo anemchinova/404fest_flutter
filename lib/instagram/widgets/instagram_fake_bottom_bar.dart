@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-const bottomBarIconSize = 22.0;
+const bottomBarIconSize = 26.0;
 
 class InstagramFakeBottomBar extends StatelessWidget {
   const InstagramFakeBottomBar({Key? key}) : super(key: key);
