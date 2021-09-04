@@ -12,7 +12,6 @@ class SuggestionTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     var avatarUrl = userProfile.avatarUrl;
 
     return Container(

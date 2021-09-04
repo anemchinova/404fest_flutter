@@ -13,7 +13,7 @@ class StoriesCarousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 80,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,

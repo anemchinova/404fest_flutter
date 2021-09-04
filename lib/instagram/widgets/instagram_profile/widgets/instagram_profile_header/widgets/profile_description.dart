@@ -16,14 +16,14 @@ class ProfileDescription extends StatelessWidget {
       children: [
         Text(
           profile.name,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 12,
           ),
         ),
         if (bio != null)
           Text(
             bio,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 10,
             ),
           ),

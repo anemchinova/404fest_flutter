@@ -22,36 +22,6 @@ class InstagramProfileAppBar extends StatelessWidget implements PreferredSizeWid
         Icon(Icons.more_horiz),
       ],
     );
-
-    return SafeArea(
-      child: SizedBox(
-        height: preferredSize.height,
-        child: DecoratedBox(
-          decoration: const BoxDecoration(
-            color: Colors.black,
-          ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  profile.username,
-                  style: TextStyle(fontSize: 18),
-                ),
-                Row(
-                  children: const [
-                    Icon(Icons.plus_one_outlined),
-                    SizedBox(width: 24),
-                    Icon(Icons.menu),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
   }
 
   @override

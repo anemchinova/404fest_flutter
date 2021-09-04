@@ -7,7 +7,6 @@ import 'package:sliver_tools/sliver_tools.dart';
 
 import 'widgets/profile_description.dart';
 import 'widgets/profile_infographics.dart';
-import 'widgets/stories_carousel.dart';
 
 class InstagramProfileHeader extends StatelessWidget {
   const InstagramProfileHeader({Key? key}) : super(key: key);

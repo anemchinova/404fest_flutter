@@ -1,6 +1,5 @@
 part of 'nested_scroll_view.dart';
 
-
 typedef NestedScrollViewPinnedHeaderSliverHeightBuilder = double Function();
 
 class NestedScrollViewX extends NestedScrollView {
@@ -20,23 +19,22 @@ class NestedScrollViewX extends NestedScrollView {
     this.pinnedHeaderSliverHeightBuilder,
     this.onlyOneScrollInBody = true,
   }) : super(
-    key: key,
-    controller: controller,
-    scrollDirection: scrollDirection,
-    reverse: reverse,
-    physics: physics,
-    headerSliverBuilder: headerSliverBuilder,
-    body: body,
-    dragStartBehavior: dragStartBehavior,
-    floatHeaderSlivers: floatHeaderSlivers,
-    clipBehavior: clipBehavior,
-    restorationId: restorationId,
-    scrollBehavior: scrollBehavior,
-  );
+          key: key,
+          controller: controller,
+          scrollDirection: scrollDirection,
+          reverse: reverse,
+          physics: physics,
+          headerSliverBuilder: headerSliverBuilder,
+          body: body,
+          dragStartBehavior: dragStartBehavior,
+          floatHeaderSlivers: floatHeaderSlivers,
+          clipBehavior: clipBehavior,
+          restorationId: restorationId,
+          scrollBehavior: scrollBehavior,
+        );
 
   /// Get the total height of pinned header in NestedScrollView header.
-  final NestedScrollViewPinnedHeaderSliverHeightBuilder?
-  pinnedHeaderSliverHeightBuilder;
+  final NestedScrollViewPinnedHeaderSliverHeightBuilder? pinnedHeaderSliverHeightBuilder;
 
   /// When [NestedScrollView]'s body has [TabBarView]/[PageView] and
   /// their children have AutomaticKeepAliveClientMixin or PageStorageKey,
@@ -46,8 +44,7 @@ class NestedScrollViewX extends NestedScrollView {
   final bool onlyOneScrollInBody;
 
   @override
-  List<Widget> _buildSlivers(BuildContext context,
-      ScrollController innerController, bool bodyIsScrolled) {
+  List<Widget> _buildSlivers(BuildContext context, ScrollController innerController, bool bodyIsScrolled) {
     return <Widget>[
       ...headerSliverBuilder(context, bodyIsScrolled),
       _SliverFillRemainingWithScrollableX(
@@ -81,18 +78,17 @@ class NestedScrollViewStateX extends NestedScrollViewState {
 
 class _NestedScrollControllerX extends _NestedScrollController {
   _NestedScrollControllerX(
-      _NestedScrollCoordinatorX coordinator, {
-        double initialScrollOffset = 0.0,
-        String? debugLabel,
-      }) : super(coordinator,
-      initialScrollOffset: initialScrollOffset, debugLabel: debugLabel);
+    _NestedScrollCoordinatorX coordinator, {
+    double initialScrollOffset = 0.0,
+    String? debugLabel,
+  }) : super(coordinator, initialScrollOffset: initialScrollOffset, debugLabel: debugLabel);
 
   @override
   ScrollPosition createScrollPosition(
-      ScrollPhysics physics,
-      ScrollContext context,
-      ScrollPosition? oldPosition,
-      ) {
+    ScrollPhysics physics,
+    ScrollContext context,
+    ScrollPosition? oldPosition,
+  ) {
     return _NestedScrollPositionX(
       coordinator: coordinator as _NestedScrollCoordinatorX,
       physics: physics,
@@ -104,8 +100,7 @@ class _NestedScrollControllerX extends _NestedScrollController {
   }
 
   @override
-  Iterable<_NestedScrollPosition> get nestedPositions =>
-      kDebugMode ? _debugNestedPositions : _releaseNestedPositions;
+  Iterable<_NestedScrollPosition> get nestedPositions => kDebugMode ? _debugNestedPositions : _releaseNestedPositions;
 
   Iterable<_NestedScrollPosition> get _debugNestedPositions {
     return Iterable.castFrom<ScrollPosition, _NestedScrollPosition>(positions);
@@ -118,14 +113,14 @@ class _NestedScrollControllerX extends _NestedScrollController {
 
 class _NestedScrollCoordinatorX extends _NestedScrollCoordinator {
   _NestedScrollCoordinatorX(
-      NestedScrollViewStateX state,
-      ScrollController? parent,
-      VoidCallback onHasScrolledBodyChanged,
-      bool floatHeaderSlivers,
-      this.pinnedHeaderSliverHeightBuilder,
-      this.onlyOneScrollInBody,
-      this.scrollDirection,
-      ) : super(state, parent, onHasScrolledBodyChanged, floatHeaderSlivers) {
+    NestedScrollViewStateX state,
+    ScrollController? parent,
+    VoidCallback onHasScrolledBodyChanged,
+    bool floatHeaderSlivers,
+    this.pinnedHeaderSliverHeightBuilder,
+    this.onlyOneScrollInBody,
+    this.scrollDirection,
+  ) : super(state, parent, onHasScrolledBodyChanged, floatHeaderSlivers) {
     final double initialScrollOffset = _parent?.initialScrollOffset ?? 0.0;
     _outerController = _NestedScrollControllerX(
       this,
@@ -140,8 +135,7 @@ class _NestedScrollCoordinatorX extends _NestedScrollCoordinator {
   }
 
   /// Get the total height of pinned header in NestedScrollView header.
-  final NestedScrollViewPinnedHeaderSliverHeightBuilder?
-  pinnedHeaderSliverHeightBuilder;
+  final NestedScrollViewPinnedHeaderSliverHeightBuilder? pinnedHeaderSliverHeightBuilder;
 
   /// When [NestedScrollView]'s body has [TabBarView]/[PageView] and
   /// their children have AutomaticKeepAliveClientMixin or PageStorageKey,
@@ -154,20 +148,16 @@ class _NestedScrollCoordinatorX extends _NestedScrollCoordinator {
 
   /// The [TabBarView]/[PageView] in body should perpendicular with The Axis of
   /// [NestedScrollView].
-  Axis get bodyScrollDirection =>
-      scrollDirection == Axis.vertical ? Axis.horizontal : Axis.vertical;
+  Axis get bodyScrollDirection => scrollDirection == Axis.vertical ? Axis.horizontal : Axis.vertical;
 
   @override
   Iterable<_NestedScrollPosition> get _innerPositions {
     if (_innerController.nestedPositions.length > 1 && onlyOneScrollInBody) {
-      final Iterable<_NestedScrollPosition> actived = _innerController
-          .nestedPositions
-          .where((element) => (element as _NestedScrollPositionX).isActived);
+      final Iterable<_NestedScrollPosition> actived =
+          _innerController.nestedPositions.where((element) => (element as _NestedScrollPositionX).isActived);
       if (actived.isEmpty) {
-        for (final _NestedScrollPosition scrollPosition
-        in _innerController.nestedPositions) {
-          final RenderObject? renderObject =
-          scrollPosition.context.storageContext.findRenderObject();
+        for (final _NestedScrollPosition scrollPosition in _innerController.nestedPositions) {
+          final RenderObject? renderObject = scrollPosition.context.storageContext.findRenderObject();
           if (renderObject == null || !renderObject.attached) {
             continue;
           }
@@ -186,9 +176,9 @@ class _NestedScrollCoordinatorX extends _NestedScrollCoordinator {
 
   /// Return whether renderObject is visible in parent
   bool childIsVisible(
-      RenderObject parent,
-      RenderObject renderObject,
-      ) {
+    RenderObject parent,
+    RenderObject renderObject,
+  ) {
     bool visible = false;
 
     // The implementation has to return the children in paint order skipping all
@@ -207,10 +197,8 @@ class _NestedScrollCoordinatorX extends _NestedScrollCoordinator {
   bool renderObjectIsVisible(RenderObject renderObject, Axis axis) {
     final RenderViewport? parent = findParentRenderViewport(renderObject);
     if (parent != null && parent.axis == axis) {
-      for (final RenderSliver childrenInPaint
-      in parent.childrenInHitTestOrder) {
-        return childIsVisible(childrenInPaint, renderObject) &&
-            renderObjectIsVisible(parent, axis);
+      for (final RenderSliver childrenInPaint in parent.childrenInHitTestOrder) {
+        return childIsVisible(childrenInPaint, renderObject) && renderObjectIsVisible(parent, axis);
       }
     }
     return true;
@@ -238,9 +226,7 @@ class _NestedScrollCoordinatorX extends _NestedScrollCoordinator {
   void updateCanDrag({_NestedScrollPosition? position}) {
     double maxInnerExtent = 0.0;
 
-    if (onlyOneScrollInBody &&
-        position != null &&
-        position.debugLabel == 'inner') {
+    if (onlyOneScrollInBody && position != null && position.debugLabel == 'inner') {
       if (position.haveDimensions) {
         maxInnerExtent = math.max(
           maxInnerExtent,
@@ -267,8 +253,7 @@ class _NestedScrollCoordinatorX extends _NestedScrollCoordinator {
 
   ///内部列表位置
   _NestedScrollPosition? get _innerPosition {
-    if (!_innerController.hasClients ||
-        _innerController.nestedPositions.isEmpty) return null;
+    if (!_innerController.hasClients || _innerController.nestedPositions.isEmpty) return null;
     // 选出与当前滑动惯性反向的最远处的innerPosition（如果滑动惯性不为零）
     _NestedScrollPosition? innerPosition;
     if (userScrollDirection != ScrollDirection.idle) {
@@ -288,15 +273,17 @@ class _NestedScrollCoordinatorX extends _NestedScrollCoordinator {
   }
 
   @override
-  _NestedScrollMetrics _getMetrics(
-      _NestedScrollPosition innerPosition, double velocity) {
+  _NestedScrollMetrics _getMetrics(_NestedScrollPosition innerPosition, double velocity) {
     return _NestedScrollMetrics(
-      minScrollExtent: _outerPosition!.minScrollExtent, //最小位置
-      maxScrollExtent: _outerPosition!.maxScrollExtent +
-          (innerPosition.maxScrollExtent -
-              innerPosition.minScrollExtent), //最大位置
-      pixels: unnestOffset(innerPosition.pixels, innerPosition), //当前位置
-      viewportDimension: _outerPosition!.viewportDimension, //可视区域长度
+      minScrollExtent: _outerPosition!.minScrollExtent,
+      //最小位置
+      maxScrollExtent:
+          _outerPosition!.maxScrollExtent + (innerPosition.maxScrollExtent - innerPosition.minScrollExtent),
+      //最大位置
+      pixels: unnestOffset(innerPosition.pixels, innerPosition),
+      //当前位置
+      viewportDimension: _outerPosition!.viewportDimension,
+      //可视区域长度
       axisDirection: _outerPosition!.axisDirection,
       minRange: 0,
       maxRange: 0,
@@ -310,9 +297,7 @@ class _NestedScrollCoordinatorX extends _NestedScrollCoordinator {
     if (source == _outerPosition) {
       if (_innerPosition!.pixels > _innerPosition!.minScrollExtent) {
         ///inner在滚动，以inner位置为基准
-        return source.maxScrollExtent +
-            _innerPosition!.pixels -
-            _innerPosition!.minScrollExtent;
+        return source.maxScrollExtent + _innerPosition!.pixels - _innerPosition!.minScrollExtent;
       }
       return value;
     } else {
@@ -338,16 +323,14 @@ class _NestedScrollCoordinatorX extends _NestedScrollCoordinator {
         //不允许innner顶部overscroll
         return target.minScrollExtent;
       }
-      return (target.minScrollExtent +
-          (value - _outerPosition!.maxScrollExtent));
+      return (target.minScrollExtent + (value - _outerPosition!.maxScrollExtent));
     }
   }
 
   ///消耗用户手势滑动量
   @override
   void applyUserOffset(double delta) {
-    updateUserScrollDirection(
-        delta > 0.0 ? ScrollDirection.forward : ScrollDirection.reverse);
+    updateUserScrollDirection(delta > 0.0 ? ScrollDirection.forward : ScrollDirection.reverse);
     if (_innerPositions.isEmpty) {
       ///不在outscroll范围内
       _outerPosition!.applyFullDragUpdate(delta);
@@ -358,8 +341,7 @@ class _NestedScrollCoordinatorX extends _NestedScrollCoordinator {
         //下拉顶部状态的 inner overscroll
         if (position.pixels < position.minScrollExtent) {
           // 内部Clamp（回到顶部为止）消耗上滑
-          final double potentialOuterDelta =
-          position.applyClampedDragUpdate(delta);
+          final double potentialOuterDelta = position.applyClampedDragUpdate(delta);
           // 内部只能消耗上滑量
           if (potentialOuterDelta < 0) {
             outerDelta = math.max(outerDelta, potentialOuterDelta);
@@ -373,8 +355,7 @@ class _NestedScrollCoordinatorX extends _NestedScrollCoordinator {
         );
         // 剩余上滑量由内部全量消耗
         if (innerDelta != 0.0) {
-          for (final _NestedScrollPosition position in _innerPositions)
-            position.applyFullDragUpdate(innerDelta);
+          for (final _NestedScrollPosition position in _innerPositions) position.applyFullDragUpdate(innerDelta);
         }
       }
     } else {
@@ -413,19 +394,19 @@ class _NestedScrollPositionX extends _NestedScrollPosition {
     String? debugLabel,
     required _NestedScrollCoordinatorX coordinator,
   }) : super(
-      physics: physics,
-      context: context,
-      initialPixels: initialPixels,
-      oldPosition: oldPosition,
-      debugLabel: debugLabel,
-      coordinator: coordinator);
+            physics: physics,
+            context: context,
+            initialPixels: initialPixels,
+            oldPosition: oldPosition,
+            debugLabel: debugLabel,
+            coordinator: coordinator);
 
   @override
   ScrollActivity createBallisticScrollActivity(
-      Simulation? simulation, {
-        required _NestedBallisticScrollActivityMode mode,
-        _NestedScrollMetrics? metrics,
-      }) {
+    Simulation? simulation, {
+    required _NestedBallisticScrollActivityMode mode,
+    _NestedScrollMetrics? metrics,
+  }) {
     if (simulation == null) return IdleScrollActivity(this);
     switch (mode) {
       case _NestedBallisticScrollActivityMode.independent:
@@ -442,19 +423,15 @@ class _NestedScrollPositionX extends _NestedScrollPosition {
 
   @override
   bool applyContentDimensions(double minScrollExtent, double maxScrollExtent) {
-    if (debugLabel == 'outer' &&
-        (coordinator as _NestedScrollCoordinatorX)
-            .pinnedHeaderSliverHeightBuilder !=
-            null) {
-      maxScrollExtent = maxScrollExtent -
-          (coordinator as _NestedScrollCoordinatorX)
-              .pinnedHeaderSliverHeightBuilder!();
+    if (debugLabel == 'outer' && (coordinator as _NestedScrollCoordinatorX).pinnedHeaderSliverHeightBuilder != null) {
+      maxScrollExtent = maxScrollExtent - (coordinator as _NestedScrollCoordinatorX).pinnedHeaderSliverHeightBuilder!();
       maxScrollExtent = math.max(0.0, maxScrollExtent);
     }
     return super.applyContentDimensions(minScrollExtent, maxScrollExtent);
   }
 
   bool _isActived = false;
+
   @override
   Drag drag(DragStartDetails details, VoidCallback dragCancelCallback) {
     _isActived = true;
@@ -472,11 +449,11 @@ class _NestedScrollPositionX extends _NestedScrollPosition {
 
 class _NestedBallisticScrollActivityX extends BallisticScrollActivity {
   _NestedBallisticScrollActivityX(
-      this.coordinator,
-      _NestedScrollPosition position,
-      Simulation simulation,
-      TickerProvider vsync,
-      ) : super(position, simulation, vsync);
+    this.coordinator,
+    _NestedScrollPosition position,
+    Simulation simulation,
+    TickerProvider vsync,
+  ) : super(position, simulation, vsync);
 
   final _NestedScrollCoordinator coordinator;
 
@@ -505,18 +482,15 @@ class _NestedBallisticScrollActivityX extends BallisticScrollActivity {
   }
 }
 
-class _SliverFillRemainingWithScrollableX
-    extends SingleChildRenderObjectWidget {
+class _SliverFillRemainingWithScrollableX extends SingleChildRenderObjectWidget {
   const _SliverFillRemainingWithScrollableX({
     Key? key,
     Widget? child,
   }) : super(key: key, child: child);
 
   @override
-  _RenderSliverFillRemainingWithScrollableX createRenderObject(
-      BuildContext context) =>
+  _RenderSliverFillRemainingWithScrollableX createRenderObject(BuildContext context) =>
       _RenderSliverFillRemainingWithScrollableX();
 }
 
-class _RenderSliverFillRemainingWithScrollableX
-    extends RenderSliverFillRemainingWithScrollable {}
+class _RenderSliverFillRemainingWithScrollableX extends RenderSliverFillRemainingWithScrollable {}
