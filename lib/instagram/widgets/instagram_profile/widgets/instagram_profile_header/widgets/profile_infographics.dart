@@ -16,7 +16,7 @@ class ProfileInfographics extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         CircleAvatar(
-          radius: 35,
+          radius: 42,
           backgroundImage: avatarUrl != null ? NetworkImage(avatarUrl) : null,
         ),
         Expanded(
@@ -55,14 +55,15 @@ class _StatColumn extends StatelessWidget {
           value.toString(),
           style: const TextStyle(
             color: Colors.white,
-            fontSize: 14,
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
           ),
         ),
         Text(
           label,
           style: const TextStyle(
             color: Colors.white,
-            fontSize: 12,
+            fontSize: 14,
             fontWeight: FontWeight.w300,
           ),
         ),

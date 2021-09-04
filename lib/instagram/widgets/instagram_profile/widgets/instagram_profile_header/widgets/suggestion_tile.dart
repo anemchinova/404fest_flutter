@@ -15,7 +15,7 @@ class SuggestionTile extends StatelessWidget {
     var avatarUrl = userProfile.avatarUrl;
 
     return Container(
-      width: 120,
+      width: 140,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(3),
         border: Border.all(color: Colors.grey, width: 0.1),
@@ -27,14 +27,15 @@ class SuggestionTile extends StatelessWidget {
         children: [
           CircleAvatar(
             backgroundColor: Colors.white,
-            radius: 30,
+            radius: 40,
             backgroundImage: avatarUrl != null ? NetworkImage(avatarUrl) : null,
           ),
           Text(
             userProfile.name,
             style: const TextStyle(
               color: Colors.white,
-              fontSize: 12,
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
             ),
             textAlign: TextAlign.center,
           ),
@@ -42,7 +43,7 @@ class SuggestionTile extends StatelessWidget {
             userProfile.username,
             style: const TextStyle(
               color: Colors.white30,
-              fontSize: 10,
+              fontSize: 12,
             ),
             textAlign: TextAlign.center,
           ),

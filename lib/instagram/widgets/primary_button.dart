@@ -24,13 +24,13 @@ class PrimaryButton extends StatelessWidget {
         textStyle: const TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.w500,
-          fontSize: 12,
+          fontSize: 14,
         ),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.lightBlue,
         alignment: Alignment.center,
         padding: const EdgeInsets.symmetric(horizontal: 7),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        minimumSize: const Size(0, 25),
+        minimumSize: const Size(0, 28),
       ),
     );
   }

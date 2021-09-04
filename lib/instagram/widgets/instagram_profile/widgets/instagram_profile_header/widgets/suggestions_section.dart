@@ -13,8 +13,8 @@ class SuggestionsSection extends StatelessWidget {
         Text(
           'Suggested for you',
           style: TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w600,
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
           ),
         ),
         Padding(

@@ -17,14 +17,17 @@ class ProfileDescription extends StatelessWidget {
         Text(
           profile.name,
           style: const TextStyle(
-            fontSize: 12,
+            fontSize: 13,
+            fontWeight: FontWeight.w500,
           ),
         ),
         if (bio != null)
           Text(
             bio,
             style: const TextStyle(
-              fontSize: 10,
+              fontSize: 13,
+              height: 1.35,
+              fontWeight: FontWeight.w400,
             ),
           ),
       ],

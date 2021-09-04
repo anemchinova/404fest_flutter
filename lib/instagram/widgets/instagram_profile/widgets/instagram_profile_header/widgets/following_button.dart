@@ -21,7 +21,7 @@ class FollowingButton extends StatelessWidget {
           Text('Following'),
           Icon(
             Icons.keyboard_arrow_down_rounded,
-            size: 12,
+            size: 15,
           ),
         ],
       ),

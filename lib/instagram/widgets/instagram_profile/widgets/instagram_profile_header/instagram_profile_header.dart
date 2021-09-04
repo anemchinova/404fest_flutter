@@ -23,6 +23,8 @@ class InstagramProfileHeader extends StatelessWidget {
             decoration: BoxDecoration(color: Colors.black),
             child: TabBar(
               indicatorColor: Colors.white,
+              indicatorWeight: 1,
+              indicatorPadding: EdgeInsets.only(bottom: 1),
               tabs: [
                 Tab(
                   icon: Icon(
@@ -53,8 +55,10 @@ class _BaseProfileHeader extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
           ProfileInfographics(),
+          VerticalSpace(15),
           ProfileDescription(),
           VerticalSpace(20),
           ProfileActions(),
