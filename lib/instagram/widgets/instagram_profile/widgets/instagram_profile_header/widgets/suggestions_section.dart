@@ -19,7 +19,7 @@ class SuggestionsSection extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: EdgeInsets.symmetric(vertical: 10),
+          padding: EdgeInsets.only(top: 10),
           child: SuggestionsCarousel(
             suggestions: [
               alenaNemchinovaProfile,

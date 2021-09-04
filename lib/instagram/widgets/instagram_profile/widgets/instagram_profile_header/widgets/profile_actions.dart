@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:fest404/core/widgets/widgets.dart';
 import 'package:fest404/instagram/widgets/instagram_profile/widgets/instagram_profile_header/widgets/profile_buttons_bar.dart';
 import 'package:fest404/instagram/widgets/instagram_profile/widgets/instagram_profile_header/widgets/suggestions_section.dart';
 import 'package:flutter/material.dart';
@@ -58,10 +57,12 @@ class _ProfileActionsState extends State<ProfileActions> with SingleTickerProvid
           },
           suggestionButtonIconAnimation: _suggestionButtonIconAnimation,
         ),
-        const VerticalSpace(20),
         SizeTransition(
           sizeFactor: _suggestionsSizeAnimationController,
-          child: const SuggestionsSection(),
+          child: const Padding(
+            padding: EdgeInsets.only(top: 20),
+            child: SuggestionsSection(),
+          ),
         ),
       ],
     );

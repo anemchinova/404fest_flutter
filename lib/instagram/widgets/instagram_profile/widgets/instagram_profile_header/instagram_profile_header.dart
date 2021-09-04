@@ -1,4 +1,5 @@
 import 'package:fest404/core/widgets/widgets.dart';
+import 'package:fest404/instagram/widgets/instagram_profile/widgets/instagram_profile_header/widgets/highlights_section.dart';
 import 'package:fest404/instagram/widgets/instagram_profile/widgets/instagram_profile_header/widgets/profile_actions.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -49,7 +50,7 @@ class _BaseProfileHeader extends StatelessWidget {
           VerticalSpace(20),
           ProfileActions(),
           VerticalSpace(20),
-          StoriesCarousel(),
+          HighlightsSection(),
         ],
       ),
     );
