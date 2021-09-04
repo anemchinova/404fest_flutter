@@ -4,9 +4,14 @@ import 'package:fest404/instagram/widgets/instagram_profile/widgets/instagram_pr
 import 'package:flutter/material.dart';
 
 class SuggestionsCarousel extends StatelessWidget {
-  const SuggestionsCarousel({Key? key, required this.suggestions}) : super(key: key);
+  const SuggestionsCarousel({
+    Key? key,
+    required this.suggestions,
+    this.padding = EdgeInsets.zero,
+  }) : super(key: key);
 
   final List<InstagramProfileData> suggestions;
+  final EdgeInsets padding;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +25,7 @@ class SuggestionsCarousel extends StatelessWidget {
           );
         },
         itemCount: suggestions.length,
-        padding: const EdgeInsets.only(right: 10),
+        padding: padding,
         separatorBuilder: (BuildContext context, int index) {
           return const HorizontalSpace(10);
         },

@@ -62,22 +62,21 @@ class InstagramProfileHeader extends StatelessWidget {
 class _BaseProfileHeader extends StatelessWidget {
   const _BaseProfileHeader({Key? key}) : super(key: key);
 
+  static const padding = EdgeInsets.symmetric(horizontal: 16);
+
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          ProfileInfographics(),
-          VerticalSpace(15),
-          ProfileDescription(),
-          VerticalSpace(20),
-          ProfileActions(),
-          VerticalSpace(20),
-          HighlightsSection(),
-        ],
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: const [
+        ProfileInfographics(padding: padding),
+        VerticalSpace(15),
+        ProfileDescription(padding: padding),
+        VerticalSpace(20),
+        ProfileActions(padding: padding),
+        VerticalSpace(20),
+        HighlightsSection(padding: padding),
+      ],
     );
   }
 }

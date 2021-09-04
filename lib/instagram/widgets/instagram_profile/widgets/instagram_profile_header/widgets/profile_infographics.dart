@@ -4,7 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ProfileInfographics extends StatelessWidget {
-  const ProfileInfographics({Key? key}) : super(key: key);
+  const ProfileInfographics({
+    Key? key,
+    this.padding = EdgeInsets.zero,
+  }) : super(key: key);
+
+  final EdgeInsets padding;
 
   @override
   Widget build(BuildContext context) {
@@ -12,23 +17,26 @@ class ProfileInfographics extends StatelessWidget {
 
     var avatarUrl = profile.avatarUrl;
 
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        CirclePhoto.avatar(imageUrl: avatarUrl),
-        Expanded(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              _StatColumn(label: 'Posts', value: profile.postsCount),
-              _StatColumn(label: 'Followers', value: profile.followersCount),
-              _StatColumn(label: 'Following', value: profile.followingsCount),
-            ],
+    return Padding(
+      padding: padding,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          CirclePhoto.avatar(imageUrl: avatarUrl),
+          Expanded(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                _StatColumn(label: 'Posts', value: profile.postsCount),
+                _StatColumn(label: 'Followers', value: profile.followersCount),
+                _StatColumn(label: 'Following', value: profile.followingsCount),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

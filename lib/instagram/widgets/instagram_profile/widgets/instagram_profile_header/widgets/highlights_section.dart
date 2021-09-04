@@ -3,10 +3,18 @@ import 'package:fest404/instagram/widgets/instagram_profile/widgets/instagram_pr
 import 'package:flutter/material.dart';
 
 class HighlightsSection extends StatelessWidget {
-  const HighlightsSection({Key? key}) : super(key: key);
+  const HighlightsSection({
+    Key? key,
+    this.padding = EdgeInsets.zero,
+  }) : super(key: key);
+
+  final EdgeInsets padding;
 
   @override
   Widget build(BuildContext context) {
-    return const HighlightsCarousel(highlights: highlightsList);
+    return HighlightsCarousel(
+      highlights: highlightsList,
+      padding: padding,
+    );
   }
 }

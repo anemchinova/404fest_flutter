@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ProfileDescription extends StatelessWidget {
-  const ProfileDescription({Key? key}) : super(key: key);
+  const ProfileDescription({
+    Key? key,
+    this.padding = EdgeInsets.zero,
+  }) : super(key: key);
+
+  final EdgeInsets padding;
 
   @override
   Widget build(BuildContext context) {
@@ -11,26 +16,29 @@ class ProfileDescription extends StatelessWidget {
 
     var bio = profile.bio;
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          profile.name,
-          style: const TextStyle(
-            fontSize: 13,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-        if (bio != null)
+    return Padding(
+      padding: padding,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
           Text(
-            bio,
+            profile.name,
             style: const TextStyle(
               fontSize: 13,
-              height: 1.35,
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.w500,
             ),
           ),
-      ],
+          if (bio != null)
+            Text(
+              bio,
+              style: const TextStyle(
+                fontSize: 13,
+                height: 1.35,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+        ],
+      ),
     );
   }
 }
