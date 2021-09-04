@@ -1,4 +1,5 @@
 import 'package:fest404/instagram/instagram_profile_data.dart';
+import 'package:fest404/instagram/widgets/instagram_profile/widgets/instagram_profile_header/widgets/circle_photo.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -15,10 +16,7 @@ class ProfileInfographics extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        CircleAvatar(
-          radius: 42,
-          backgroundImage: avatarUrl != null ? NetworkImage(avatarUrl) : null,
-        ),
+        CirclePhoto.avatar(imageUrl: avatarUrl),
         Expanded(
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
