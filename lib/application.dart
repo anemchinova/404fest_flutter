@@ -1,6 +1,5 @@
+import 'package:fest404/instagram/instagram.dart';
 import 'package:flutter/material.dart';
-
-import 'instagram/instagram.dart';
 
 class Application extends StatelessWidget {
   const Application({Key? key}) : super(key: key);

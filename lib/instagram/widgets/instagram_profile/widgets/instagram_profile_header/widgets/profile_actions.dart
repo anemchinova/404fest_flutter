@@ -12,7 +12,7 @@ class ProfileActions extends StatefulWidget {
 }
 
 class _ProfileActionsState extends State<ProfileActions> with SingleTickerProviderStateMixin {
-  final ValueNotifier _suggestionsVisibilityListenable = ValueNotifier<bool>(false);
+  final ValueNotifier<bool> _suggestionsVisibilityListenable = ValueNotifier<bool>(false);
 
   late AnimationController _suggestionsSizeAnimationController;
   late Animation<double> _suggestionButtonIconAnimation;

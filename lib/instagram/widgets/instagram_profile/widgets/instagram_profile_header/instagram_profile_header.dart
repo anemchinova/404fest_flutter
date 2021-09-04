@@ -1,12 +1,11 @@
 import 'package:fest404/core/widgets/widgets.dart';
 import 'package:fest404/instagram/widgets/instagram_profile/widgets/instagram_profile_header/widgets/highlights_section.dart';
 import 'package:fest404/instagram/widgets/instagram_profile/widgets/instagram_profile_header/widgets/profile_actions.dart';
+import 'package:fest404/instagram/widgets/instagram_profile/widgets/instagram_profile_header/widgets/profile_description.dart';
+import 'package:fest404/instagram/widgets/instagram_profile/widgets/instagram_profile_header/widgets/profile_infographics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:sliver_tools/sliver_tools.dart';
-
-import 'widgets/profile_description.dart';
-import 'widgets/profile_infographics.dart';
 
 class InstagramProfileHeader extends StatelessWidget {
   const InstagramProfileHeader({Key? key}) : super(key: key);

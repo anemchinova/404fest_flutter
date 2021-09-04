@@ -1,1 +1,22 @@
 include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - lib/instagram/widgets/nested_scroll_view/**
+
+  strong-mode:
+    implicit-casts: false
+    implicit-dynamic: false
+
+  errors:
+    always_declare_return_types: error
+    missing_return: error
+    unnecessary_new: error
+    always_use_package_imports: error
+
+linter:
+  rules:
+    - always_declare_return_types
+    - prefer_single_quotes
+    - always_use_package_imports
+    
