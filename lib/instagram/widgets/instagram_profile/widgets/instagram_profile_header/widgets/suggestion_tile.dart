@@ -1,5 +1,5 @@
 import 'package:fest404/instagram/instagram_profile_data.dart';
-import 'package:fest404/instagram/widgets/color_button.dart';
+import 'package:fest404/instagram/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
 
 class SuggestionTile extends StatelessWidget {
