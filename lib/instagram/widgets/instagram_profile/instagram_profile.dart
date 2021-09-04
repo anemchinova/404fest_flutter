@@ -7,14 +7,31 @@ import 'package:fest404/instagram/widgets/nested_scroll_view/nested_scroll_view.
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class InstagramProfile extends StatelessWidget {
+class InstagramProfile extends StatefulWidget {
   const InstagramProfile({Key? key}) : super(key: key);
 
   @override
+  _InstagramProfileState createState() => _InstagramProfileState();
+}
+
+class _InstagramProfileState extends State<InstagramProfile> {
+  final ScrollController _controller = ScrollController();
+
+  @override
+  void initState() {
+    super.initState();
+    _controller.addListener(() {
+      print(_controller.position.maxScrollExtent);
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
+    print('Size: ${MediaQuery.of(context).size.width}');
     return DefaultTabController(
       length: 4,
       child: x.NestedScrollViewX(
+        controller: _controller,
         physics: const BouncingScrollPhysics(),
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
