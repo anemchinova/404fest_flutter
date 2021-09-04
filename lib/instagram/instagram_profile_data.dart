@@ -4,10 +4,10 @@ const testInstagramProfile = InstagramProfileData(
   postsCount: 142,
   followersCount: 2050,
   followingsCount: 887,
-  bio: """🚀 Приложения для техно-стартапов и собственные продукты
+  bio: '''🚀 Приложения для техно-стартапов и собственные продукты
 👥 50 миллионов пользователей по всему миру
 💈 404fest, митапы и стажировки для разработчиков
-mercdev.ru/links""",
+mercdev.ru/links''',
   avatarUrl:
       'https://media-exp1.licdn.com/dms/image/C560BAQHAoDg0ETWEPw/company-logo_200_200/0/1588791475575?e=2159024400&v=beta&t=-pSUjkpcwmJp6tbmj1X_NgNJr8jxHfvxayufkTAgP9A',
 );
