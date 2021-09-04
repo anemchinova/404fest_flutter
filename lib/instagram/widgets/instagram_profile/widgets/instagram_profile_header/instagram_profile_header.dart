@@ -34,6 +34,18 @@ class InstagramProfileHeader extends StatelessWidget {
                 ),
                 Tab(
                   icon: Icon(
+                    CupertinoIcons.film,
+                    size: 18,
+                  ),
+                ),
+                Tab(
+                  icon: Icon(
+                    CupertinoIcons.play_arrow,
+                    size: 18,
+                  ),
+                ),
+                Tab(
+                  icon: Icon(
                     CupertinoIcons.bubble_middle_top,
                     size: 18,
                   ),
