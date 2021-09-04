@@ -1,4 +1,6 @@
+import 'package:fest404/instagram/instagram_profile_data.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'widgets/instagram_fake_bottom_bar.dart';
 import 'widgets/instagram_profile/instagram_profile.dart';
@@ -9,11 +11,16 @@ class InstagramDemoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.black,
-      appBar: InstagramProfileAppBar(),
-      body: InstagramProfile(),
-      bottomNavigationBar: InstagramFakeBottomBar(),
+    var profile = testInstagramProfile;
+
+    return Provider<InstagramProfileData>.value(
+      value: profile,
+      child: const Scaffold(
+        backgroundColor: Colors.black,
+        appBar: InstagramProfileAppBar(),
+        body: InstagramProfile(),
+        bottomNavigationBar: InstagramFakeBottomBar(),
+      ),
     );
   }
 }

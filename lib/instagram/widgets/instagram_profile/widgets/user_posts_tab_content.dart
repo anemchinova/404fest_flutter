@@ -1,3 +1,4 @@
+import 'package:fest404/instagram/widgets/nested_scroll_view/nested_scroll_view.dart' as x;
 import 'package:flutter/material.dart';
 
 class UserPostsTabContent extends StatelessWidget {
@@ -7,8 +8,8 @@ class UserPostsTabContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        SliverOverlapInjector(
-          handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+        x.SliverOverlapInjector(
+          handle: x.NestedScrollView.sliverOverlapAbsorberHandleFor(context),
         ),
         SliverGrid(
           delegate: SliverChildBuilderDelegate(
