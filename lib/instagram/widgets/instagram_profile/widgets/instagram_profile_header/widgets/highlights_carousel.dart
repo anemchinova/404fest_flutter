@@ -3,8 +3,8 @@ import 'package:fest404/instagram/instagram_highlights_data.dart';
 import 'package:fest404/instagram/widgets/instagram_profile/widgets/instagram_profile_header/widgets/highlights_tile.dart';
 import 'package:flutter/material.dart';
 
-class StoriesCarousel extends StatelessWidget {
-  const StoriesCarousel({
+class HighlightsCarousel extends StatelessWidget {
+  const HighlightsCarousel({
     Key? key,
     required this.highlights,
   }) : super(key: key);
