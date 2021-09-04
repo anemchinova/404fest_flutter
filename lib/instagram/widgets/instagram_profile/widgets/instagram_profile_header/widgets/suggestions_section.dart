@@ -28,12 +28,26 @@ class SuggestionsSection extends StatelessWidget {
         children: [
           Padding(
             padding: horizontalPadding,
-            child: const Text(
-              'Suggested for you',
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
-              ),
+            child: Row(
+              children: const [
+                Expanded(
+                  child: Text(
+                    'Suggested for you',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+                Text(
+                  'See All',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.blue,
+                  ),
+                )
+              ],
             ),
           ),
           Padding(
