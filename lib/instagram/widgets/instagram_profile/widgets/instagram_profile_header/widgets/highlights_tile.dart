@@ -19,7 +19,7 @@ class HighlightsTile extends StatelessWidget {
       child: Column(
         children: [
           CircleAvatar(
-            radius: 25,
+            radius: 30,
             backgroundImage: coverUrl != null ? NetworkImage(coverUrl) : null,
           ),
           const VerticalSpace(5),
