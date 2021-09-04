@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class BaseOutlinedButton extends StatelessWidget {
-  const BaseOutlinedButton({
+class InstagramOutlinedButton extends StatelessWidget {
+  const InstagramOutlinedButton({
     Key? key,
     required this.child,
     required this.onPressed,

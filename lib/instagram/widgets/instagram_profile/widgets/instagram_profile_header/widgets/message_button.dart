@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../outlined_button.dart';
+import '../../../../instagram_outlined_button.dart';
 
 class MessageButton extends StatelessWidget {
   const MessageButton({
@@ -12,7 +12,7 @@ class MessageButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BaseOutlinedButton(
+    return InstagramOutlinedButton(
       onPressed: onPressed,
       child: const Text('Message'),
     );

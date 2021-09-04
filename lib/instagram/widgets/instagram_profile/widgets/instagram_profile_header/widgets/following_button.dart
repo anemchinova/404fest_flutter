@@ -1,4 +1,4 @@
-import 'package:fest404/instagram/widgets/outlined_button.dart';
+import 'package:fest404/instagram/widgets/instagram_outlined_button.dart';
 import 'package:flutter/material.dart';
 
 @immutable
@@ -12,7 +12,7 @@ class FollowingButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BaseOutlinedButton(
+    return InstagramOutlinedButton(
       onPressed: onPressed,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,

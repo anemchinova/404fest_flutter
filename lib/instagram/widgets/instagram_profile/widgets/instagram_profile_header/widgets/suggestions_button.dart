@@ -1,4 +1,4 @@
-import 'package:fest404/instagram/widgets/outlined_button.dart';
+import 'package:fest404/instagram/widgets/instagram_outlined_button.dart';
 import 'package:flutter/material.dart';
 
 class SuggestionsButton extends StatelessWidget {
@@ -32,7 +32,7 @@ class SuggestionsButton extends StatelessWidget {
       );
     }
 
-    return BaseOutlinedButton(
+    return InstagramOutlinedButton(
       onPressed: onPressed,
       child: child,
     );
