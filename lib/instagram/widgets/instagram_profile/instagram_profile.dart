@@ -1,3 +1,5 @@
+import 'package:fest404/instagram/widgets/nested_scroll_view/nested_scroll_view.dart' as x;
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/instagram_profile_header/instagram_profile_header.dart';
@@ -11,11 +13,13 @@ class InstagramProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 2,
-      child: NestedScrollView(
+      child: x.NestedScrollViewX(
+        physics: const BouncingScrollPhysics(),
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
-            SliverOverlapAbsorber(
-              handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+            const CupertinoSliverRefreshControl(),
+            x.SliverOverlapAbsorber(
+              handle: x.NestedScrollView.sliverOverlapAbsorberHandleFor(context),
               sliver: const InstagramProfileHeader(),
             ),
           ];
