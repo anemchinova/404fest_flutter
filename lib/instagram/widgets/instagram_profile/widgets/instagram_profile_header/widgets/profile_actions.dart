@@ -5,7 +5,12 @@ import 'package:fest404/instagram/widgets/instagram_profile/widgets/instagram_pr
 import 'package:flutter/material.dart';
 
 class ProfileActions extends StatefulWidget {
-  const ProfileActions({Key? key}) : super(key: key);
+  const ProfileActions({
+    Key? key,
+    this.padding = EdgeInsets.zero,
+  }) : super(key: key);
+
+  final EdgeInsets padding;
 
   @override
   _ProfileActionsState createState() => _ProfileActionsState();
@@ -46,25 +51,43 @@ class _ProfileActionsState extends State<ProfileActions> with SingleTickerProvid
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        ProfileButtonBar(
-          onSuggestionsButtonPressed: () {
-            var currentValue = _suggestionsVisibilityListenable.value;
-            _suggestionsVisibilityListenable.value = !currentValue;
-          },
-          suggestionButtonIconAnimation: _suggestionButtonIconAnimation,
-        ),
-        SizeTransition(
-          sizeFactor: _suggestionsSizeAnimationController,
-          child: const Padding(
-            padding: EdgeInsets.only(top: 20),
-            child: SuggestionsSection(),
+    var padding = widget.padding;
+    var horizontalPadding = EdgeInsets.only(
+      left: padding.left,
+      right: padding.right,
+    );
+    var verticalPadding = EdgeInsets.only(
+      top: padding.top,
+      bottom: padding.bottom,
+    );
+
+    return Padding(
+      padding: verticalPadding,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Padding(
+            padding: horizontalPadding,
+            child: ProfileButtonBar(
+              onSuggestionsButtonPressed: () {
+                var currentValue = _suggestionsVisibilityListenable.value;
+                _suggestionsVisibilityListenable.value = !currentValue;
+              },
+              suggestionButtonIconAnimation: _suggestionButtonIconAnimation,
+            ),
           ),
-        ),
-      ],
+          SizeTransition(
+            sizeFactor: _suggestionsSizeAnimationController,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: SuggestionsSection(
+                padding: horizontalPadding,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

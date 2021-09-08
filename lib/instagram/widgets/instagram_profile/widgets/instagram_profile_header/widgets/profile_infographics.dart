@@ -1,9 +1,15 @@
 import 'package:fest404/instagram/instagram_profile_data.dart';
+import 'package:fest404/instagram/widgets/instagram_profile/widgets/instagram_profile_header/widgets/circle_photo.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ProfileInfographics extends StatelessWidget {
-  const ProfileInfographics({Key? key}) : super(key: key);
+  const ProfileInfographics({
+    Key? key,
+    this.padding = EdgeInsets.zero,
+  }) : super(key: key);
+
+  final EdgeInsets padding;
 
   @override
   Widget build(BuildContext context) {
@@ -11,26 +17,26 @@ class ProfileInfographics extends StatelessWidget {
 
     var avatarUrl = profile.avatarUrl;
 
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        CircleAvatar(
-          radius: 35,
-          backgroundImage: avatarUrl != null ? NetworkImage(avatarUrl) : null,
-        ),
-        Expanded(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              _StatColumn(label: 'Posts', value: profile.postsCount),
-              _StatColumn(label: 'Followers', value: profile.followersCount),
-              _StatColumn(label: 'Following', value: profile.followingsCount),
-            ],
+    return Padding(
+      padding: padding,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          CirclePhoto.avatar(imageUrl: avatarUrl),
+          Expanded(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                _StatColumn(label: 'Posts', value: profile.postsCount),
+                _StatColumn(label: 'Followers', value: profile.followersCount),
+                _StatColumn(label: 'Following', value: profile.followingsCount),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
@@ -55,14 +61,15 @@ class _StatColumn extends StatelessWidget {
           value.toString(),
           style: const TextStyle(
             color: Colors.white,
-            fontSize: 14,
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
           ),
         ),
         Text(
           label,
           style: const TextStyle(
             color: Colors.white,
-            fontSize: 12,
+            fontSize: 14,
             fontWeight: FontWeight.w300,
           ),
         ),

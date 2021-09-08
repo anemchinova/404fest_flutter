@@ -3,6 +3,7 @@ import 'package:fest404/instagram/widgets/instagram_profile/widgets/instagram_pr
 import 'package:fest404/instagram/widgets/instagram_profile/widgets/instagram_profile_header/widgets/profile_actions.dart';
 import 'package:fest404/instagram/widgets/instagram_profile/widgets/instagram_profile_header/widgets/profile_description.dart';
 import 'package:fest404/instagram/widgets/instagram_profile/widgets/instagram_profile_header/widgets/profile_infographics.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:sliver_tools/sliver_tools.dart';
@@ -22,9 +23,33 @@ class InstagramProfileHeader extends StatelessWidget {
             decoration: BoxDecoration(color: Colors.black),
             child: TabBar(
               indicatorColor: Colors.white,
+              indicatorWeight: 1,
+              indicatorPadding: EdgeInsets.only(bottom: 1),
               tabs: [
-                Tab(icon: Icon(Icons.photo_library)),
-                Tab(icon: Icon(Icons.assignment_ind_outlined)),
+                Tab(
+                  icon: Icon(
+                    CupertinoIcons.square_grid_3x2,
+                    size: 18,
+                  ),
+                ),
+                Tab(
+                  icon: Icon(
+                    CupertinoIcons.film,
+                    size: 18,
+                  ),
+                ),
+                Tab(
+                  icon: Icon(
+                    CupertinoIcons.play_arrow,
+                    size: 18,
+                  ),
+                ),
+                Tab(
+                  icon: Icon(
+                    CupertinoIcons.bubble_middle_top,
+                    size: 18,
+                  ),
+                ),
               ],
             ),
           ),
@@ -37,20 +62,21 @@ class InstagramProfileHeader extends StatelessWidget {
 class _BaseProfileHeader extends StatelessWidget {
   const _BaseProfileHeader({Key? key}) : super(key: key);
 
+  static const padding = EdgeInsets.symmetric(horizontal: 16);
+
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        children: const [
-          ProfileInfographics(),
-          ProfileDescription(),
-          VerticalSpace(20),
-          ProfileActions(),
-          VerticalSpace(20),
-          HighlightsSection(),
-        ],
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: const [
+        ProfileInfographics(padding: padding),
+        VerticalSpace(15),
+        ProfileDescription(padding: padding),
+        VerticalSpace(20),
+        ProfileActions(padding: padding),
+        VerticalSpace(20),
+        HighlightsSection(padding: padding),
+      ],
     );
   }
 }

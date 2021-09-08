@@ -24,12 +24,12 @@ class InstagramOutlinedButton extends StatelessWidget {
         textStyle: const TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.w500,
-          fontSize: 12,
+          fontSize: 14,
         ),
         alignment: Alignment.center,
         padding: const EdgeInsets.symmetric(horizontal: 7),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        minimumSize: const Size(0, 30),
+        minimumSize: const Size(0, 35),
       ),
     );
   }

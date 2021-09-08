@@ -14,16 +14,18 @@ class FollowingButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InstagramOutlinedButton(
       onPressed: onPressed,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          Text('Following'),
-          Icon(
-            Icons.keyboard_arrow_down_rounded,
-            size: 12,
-          ),
-        ],
+      child: FittedBox(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Text('Following'),
+            Icon(
+              Icons.keyboard_arrow_down_rounded,
+              size: 15,
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:fest404/instagram/instagram_profile_data.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -17,9 +18,27 @@ class InstagramProfileAppBar extends StatelessWidget implements PreferredSizeWid
       ),
       backgroundColor: Colors.transparent,
       elevation: 0.0,
-      actions: const [
-        Icon(Icons.notifications_outlined),
-        Icon(Icons.more_horiz),
+      actions: [
+        CupertinoButton(
+          onPressed: () {},
+          child: const Icon(
+            CupertinoIcons.bell,
+            size: 20,
+            color: Colors.white,
+          ),
+          padding: EdgeInsets.zero,
+          minSize: 40,
+        ),
+        CupertinoButton(
+          onPressed: () {},
+          child: const Icon(
+            CupertinoIcons.ellipsis,
+            size: 16,
+            color: Colors.white,
+          ),
+          padding: EdgeInsets.zero,
+          minSize: 40,
+        ),
       ],
     );
   }

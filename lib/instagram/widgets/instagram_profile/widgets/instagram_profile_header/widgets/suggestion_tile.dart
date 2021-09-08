@@ -1,4 +1,5 @@
 import 'package:fest404/instagram/instagram_profile_data.dart';
+import 'package:fest404/instagram/widgets/instagram_profile/widgets/instagram_profile_header/widgets/circle_photo.dart';
 import 'package:fest404/instagram/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class SuggestionTile extends StatelessWidget {
     var avatarUrl = userProfile.avatarUrl;
 
     return Container(
-      width: 120,
+      width: 140,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(3),
         border: Border.all(color: Colors.grey, width: 0.1),
@@ -25,16 +26,15 @@ class SuggestionTile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          CircleAvatar(
-            backgroundColor: Colors.white,
-            radius: 30,
-            backgroundImage: avatarUrl != null ? NetworkImage(avatarUrl) : null,
+          CirclePhoto.suggestionCard(
+            imageUrl: avatarUrl,
           ),
           Text(
             userProfile.name,
             style: const TextStyle(
               color: Colors.white,
-              fontSize: 12,
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
             ),
             textAlign: TextAlign.center,
           ),
@@ -42,7 +42,7 @@ class SuggestionTile extends StatelessWidget {
             userProfile.username,
             style: const TextStyle(
               color: Colors.white30,
-              fontSize: 10,
+              fontSize: 12,
             ),
             textAlign: TextAlign.center,
           ),
