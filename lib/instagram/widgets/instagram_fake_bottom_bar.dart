@@ -1,3 +1,5 @@
+import 'package:fest404/core/widgets/svg_icon.dart';
+import 'package:fest404/instagram/instagram_assets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -20,10 +22,10 @@ class InstagramFakeBottomBar extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
-                Icon(CupertinoIcons.home, size: bottomBarIconSize),
-                Icon(CupertinoIcons.search, size: bottomBarIconSize),
-                Icon(CupertinoIcons.film, size: bottomBarIconSize),
-                Icon(CupertinoIcons.heart, size: bottomBarIconSize),
+                SvgIcon(InstagramAssets.home, size: bottomBarIconSize),
+                SvgIcon(InstagramAssets.search, size: bottomBarIconSize),
+                SvgIcon(InstagramAssets.reels, size: bottomBarIconSize),
+                SvgIcon(InstagramAssets.heart, size: bottomBarIconSize),
                 Icon(CupertinoIcons.profile_circled, size: bottomBarIconSize),
               ],
             ),
