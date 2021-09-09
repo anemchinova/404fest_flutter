@@ -1,6 +1,7 @@
 import 'package:fest404/instagram/instagram_reel_data.dart';
 import 'package:fest404/instagram/widgets/instagram_profile/widgets/reel_tile.dart';
-import 'package:fest404/instagram/widgets/nested_scroll_view/nested_scroll_view.dart' as x;
+import 'package:fest404/instagram/widgets/nested_scroll_view/nested_scroll_view.dart'
+    as x;
 import 'package:flutter/material.dart';
 
 class ReelsTabContent extends StatelessWidget {
@@ -8,8 +9,6 @@ class ReelsTabContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var reels = testReels;
-
     return CustomScrollView(
       shrinkWrap: true,
       slivers: [
