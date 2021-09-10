@@ -1,4 +1,6 @@
+import 'package:fest404/core/widgets/svg_icon.dart';
 import 'package:fest404/core/widgets/widgets.dart';
+import 'package:fest404/instagram/instagram_assets.dart';
 import 'package:fest404/instagram/widgets/instagram_profile/widgets/instagram_profile_header/widgets/highlights_section.dart';
 import 'package:fest404/instagram/widgets/instagram_profile/widgets/instagram_profile_header/widgets/profile_actions.dart';
 import 'package:fest404/instagram/widgets/instagram_profile/widgets/instagram_profile_header/widgets/profile_description.dart';
@@ -27,27 +29,27 @@ class InstagramProfileHeader extends StatelessWidget {
               indicatorPadding: EdgeInsets.only(bottom: 1),
               tabs: [
                 Tab(
-                  icon: Icon(
-                    CupertinoIcons.square_grid_3x2,
-                    size: 18,
+                  icon: SvgIcon(
+                    InstagramAssets.grid,
+                    size: 24,
                   ),
                 ),
                 Tab(
-                  icon: Icon(
-                    CupertinoIcons.film,
-                    size: 18,
+                  icon: SvgIcon(
+                    InstagramAssets.reels,
+                    size: 24,
                   ),
                 ),
                 Tab(
-                  icon: Icon(
-                    CupertinoIcons.play_arrow,
-                    size: 18,
+                  icon: SvgIcon(
+                    InstagramAssets.playOutline,
+                    size: 24,
                   ),
                 ),
                 Tab(
-                  icon: Icon(
-                    CupertinoIcons.bubble_middle_top,
-                    size: 18,
+                  icon: SvgIcon(
+                    InstagramAssets.mentions,
+                    size: 24,
                   ),
                 ),
               ],

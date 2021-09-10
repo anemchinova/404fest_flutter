@@ -32,7 +32,7 @@ class ReelTile extends StatelessWidget {
               ),
               Text(
                 reel.viewsCount.toString(),
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 12,
                 ),
               ),

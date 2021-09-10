@@ -1,5 +1,6 @@
+import 'package:fest404/core/widgets/svg_icon.dart';
+import 'package:fest404/instagram/instagram_assets.dart';
 import 'package:fest404/instagram/instagram_post_data.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class PostTile extends StatelessWidget {
@@ -40,28 +41,15 @@ class _PostTileIconSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    IconData? iconData;
-
     switch (postType) {
-      case InstagramPostDataType.photo:
-        break;
       case InstagramPostDataType.album:
-        iconData = CupertinoIcons.rectangle_stack_fill;
-        break;
+        return const SvgIcon(InstagramAssets.layers, size: 16);
       case InstagramPostDataType.video:
-        iconData = CupertinoIcons.play_arrow_solid;
-        break;
+        return const SvgIcon(InstagramAssets.playFilled, size: 16);
       case InstagramPostDataType.reel:
-        iconData = CupertinoIcons.film;
-        break;
+        return const SvgIcon(InstagramAssets.reels, size: 20);
+      default:
+        return const SizedBox.shrink();
     }
-
-    if (iconData == null) return const SizedBox.shrink();
-
-    return Icon(
-      iconData,
-      size: 20,
-      color: Colors.white,
-    );
   }
 }
