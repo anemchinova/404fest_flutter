@@ -16,9 +16,11 @@ class PostTile extends StatelessWidget {
     return Stack(
       alignment: Alignment.topRight,
       children: [
-        Image.network(
-          post.coverUrl,
-          fit: BoxFit.cover,
+        Positioned.fill(
+          child: Image.network(
+            post.coverUrl,
+            fit: BoxFit.cover,
+          ),
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),
