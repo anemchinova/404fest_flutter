@@ -13,6 +13,7 @@ class Application extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const InstagramDemoPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

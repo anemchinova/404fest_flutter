@@ -1,50 +1,53 @@
+const _kPhotosPath =
+    'https://github.com/anemchinova/404fest_flutter/blob/main/instagram_photos/';
+
 const instagramTestPosts = <InstagramPostData>[
   InstagramPostData(
-    coverUrl: 'https://github.com/anemchinova/404fest_flutter/blob/nemchinova/photos/instagram_photos/01.jpg?raw=true',
+    coverUrl: '$_kPhotosPath/01.jpg?raw=true',
     type: InstagramPostDataType.reel,
   ),
   InstagramPostData(
-    coverUrl: 'https://github.com/anemchinova/404fest_flutter/blob/nemchinova/photos/instagram_photos/02.jpg?raw=true',
+    coverUrl: '$_kPhotosPath/02.jpg?raw=true',
     type: InstagramPostDataType.album,
   ),
   InstagramPostData(
-    coverUrl: 'https://github.com/anemchinova/404fest_flutter/blob/nemchinova/photos/instagram_photos/03.png?raw=true',
+    coverUrl: '$_kPhotosPath/03.png?raw=true',
     type: InstagramPostDataType.video,
   ),
   InstagramPostData(
-    coverUrl: 'https://github.com/anemchinova/404fest_flutter/blob/nemchinova/photos/instagram_photos/04.png?raw=true',
+    coverUrl: '$_kPhotosPath/04.png?raw=true',
     type: InstagramPostDataType.album,
   ),
   InstagramPostData(
-    coverUrl: 'https://github.com/anemchinova/404fest_flutter/blob/nemchinova/photos/instagram_photos/05.png?raw=true',
+    coverUrl: '$_kPhotosPath/05.png?raw=true',
     type: InstagramPostDataType.video,
   ),
   InstagramPostData(
-    coverUrl: 'https://github.com/anemchinova/404fest_flutter/blob/nemchinova/photos/instagram_photos/06.png?raw=true',
+    coverUrl: '$_kPhotosPath/06.png?raw=true',
     type: InstagramPostDataType.album,
   ),
   InstagramPostData(
-    coverUrl: 'https://github.com/anemchinova/404fest_flutter/blob/nemchinova/photos/instagram_photos/07.png?raw=true',
+    coverUrl: '$_kPhotosPath/07.png?raw=true',
     type: InstagramPostDataType.album,
   ),
   InstagramPostData(
-    coverUrl: 'https://github.com/anemchinova/404fest_flutter/blob/nemchinova/photos/instagram_photos/08.png?raw=true',
+    coverUrl: '$_kPhotosPath/08.png?raw=true',
     type: InstagramPostDataType.album,
   ),
   InstagramPostData(
-    coverUrl: 'https://github.com/anemchinova/404fest_flutter/blob/nemchinova/photos/instagram_photos/09.png?raw=true',
+    coverUrl: '$_kPhotosPath/09.png?raw=true',
     type: InstagramPostDataType.photo,
   ),
   InstagramPostData(
-    coverUrl: 'https://github.com/anemchinova/404fest_flutter/blob/nemchinova/photos/instagram_photos/10.jpg?raw=true',
+    coverUrl: '$_kPhotosPath/10.jpg?raw=true',
     type: InstagramPostDataType.photo,
   ),
   InstagramPostData(
-    coverUrl: 'https://github.com/anemchinova/404fest_flutter/blob/nemchinova/photos/instagram_photos/11.png?raw=true',
+    coverUrl: '$_kPhotosPath/11.png?raw=true',
     type: InstagramPostDataType.video,
   ),
   InstagramPostData(
-    coverUrl: 'https://github.com/anemchinova/404fest_flutter/blob/nemchinova/photos/instagram_photos/12.png?raw=true',
+    coverUrl: '$_kPhotosPath/12.png?raw=true',
     type: InstagramPostDataType.album,
   ),
 ];
