@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fest404/core/widgets/svg_icon.dart';
 import 'package:fest404/instagram/instagram_assets.dart';
 import 'package:fest404/instagram/instagram_post_data.dart';
@@ -17,10 +18,13 @@ class PostTile extends StatelessWidget {
       alignment: Alignment.topRight,
       children: [
         Positioned.fill(
-          child: Image.network(
-            post.coverUrl,
-            fit: BoxFit.cover,
-          ),
+          child: LayoutBuilder(builder: (context, constraints) {
+            return CachedNetworkImage(
+              imageUrl: post.coverUrl,
+              fit: BoxFit.cover,
+              memCacheHeight: constraints.maxHeight.toInt(),
+            );
+          }),
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),
