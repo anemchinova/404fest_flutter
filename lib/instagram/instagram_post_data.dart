@@ -4,23 +4,23 @@ const _kPhotosPath =
 const instagramTestPosts = <InstagramPostData>[
   InstagramPostData(
     coverUrl: '$_kPhotosPath/01.jpg?raw=true',
-    type: InstagramPostDataType.reel,
+    type: InstagramPostDataType.album,
   ),
   InstagramPostData(
     coverUrl: '$_kPhotosPath/02.jpg?raw=true',
-    type: InstagramPostDataType.album,
+    type: InstagramPostDataType.video,
   ),
   InstagramPostData(
     coverUrl: '$_kPhotosPath/03.png?raw=true',
-    type: InstagramPostDataType.video,
-  ),
-  InstagramPostData(
-    coverUrl: '$_kPhotosPath/04.png?raw=true',
     type: InstagramPostDataType.album,
   ),
   InstagramPostData(
-    coverUrl: '$_kPhotosPath/05.png?raw=true',
+    coverUrl: '$_kPhotosPath/04.png?raw=true',
     type: InstagramPostDataType.video,
+  ),
+  InstagramPostData(
+    coverUrl: '$_kPhotosPath/05.png?raw=true',
+    type: InstagramPostDataType.album,
   ),
   InstagramPostData(
     coverUrl: '$_kPhotosPath/06.png?raw=true',
@@ -28,7 +28,7 @@ const instagramTestPosts = <InstagramPostData>[
   ),
   InstagramPostData(
     coverUrl: '$_kPhotosPath/07.png?raw=true',
-    type: InstagramPostDataType.album,
+    type: InstagramPostDataType.photo,
   ),
   InstagramPostData(
     coverUrl: '$_kPhotosPath/08.png?raw=true',
@@ -36,7 +36,7 @@ const instagramTestPosts = <InstagramPostData>[
   ),
   InstagramPostData(
     coverUrl: '$_kPhotosPath/09.png?raw=true',
-    type: InstagramPostDataType.photo,
+    type: InstagramPostDataType.album,
   ),
   InstagramPostData(
     coverUrl: '$_kPhotosPath/10.jpg?raw=true',
@@ -44,7 +44,7 @@ const instagramTestPosts = <InstagramPostData>[
   ),
   InstagramPostData(
     coverUrl: '$_kPhotosPath/11.png?raw=true',
-    type: InstagramPostDataType.video,
+    type: InstagramPostDataType.album,
   ),
   InstagramPostData(
     coverUrl: '$_kPhotosPath/12.png?raw=true',

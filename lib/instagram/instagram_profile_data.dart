@@ -1,3 +1,5 @@
+const _kProfilePath = 'https://github.com/anemchinova/404fest_flutter/blob/main/instagram_photos/';
+
 const testInstagramProfile = InstagramProfileData(
   name: 'Mercury Development',
   username: 'mercdev',
@@ -15,22 +17,19 @@ mercdev.ru/links''',
 const alenaNemchinovaProfile = InstagramProfileData(
   name: 'Alena Nemchinova',
   username: 'al.nemchinova',
-  avatarUrl:
-      'https://github.com/anemchinova/404fest_flutter/blob/main/instagram_photos/alena.jpg',
+  avatarUrl: '$_kProfilePath/alena.jpg?raw=true',
 );
 
 const artemKruppProfile = InstagramProfileData(
   name: 'Artem Krupp',
   username: 'artemintheskyy',
-  avatarUrl:
-      'https://github.com/anemchinova/404fest_flutter/blob/main/instagram_photos/artem.jpg',
+  avatarUrl: '$_kProfilePath/artem.jpg?raw=true',
 );
 
 const sergeyLavinovProfile = InstagramProfileData(
   name: 'Sergey Lavinov',
   username: 'jump_stalder',
-  avatarUrl:
-      'https://github.com/anemchinova/404fest_flutter/blob/main/instagram_photos/sergey.jpg',
+  avatarUrl: '$_kProfilePath/sergey.jpg?raw=true',
 );
 
 class InstagramProfileData {

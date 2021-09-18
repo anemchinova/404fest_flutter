@@ -1,5 +1,5 @@
 const _kHighlightsPath =
-    'https://github.com/anemchinova/404fest_flutter/blob/main';
+    'https://github.com/anemchinova/404fest_flutter/blob/main/instagram_photos';
 
 const highlightsList = <InstagramHighlightsData>[
   InstagramHighlightsData(
