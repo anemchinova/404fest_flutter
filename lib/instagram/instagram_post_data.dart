@@ -3,7 +3,7 @@ const _kPhotosPath =
 
 const instagramTestPosts = <InstagramPostData>[
   InstagramPostData(
-    coverUrl: '$_kPhotosPath/01.jpg?raw=true',
+    coverUrl: '$_kPhotosPath/01.png?raw=true',
     type: InstagramPostDataType.album,
   ),
   InstagramPostData(
@@ -19,11 +19,11 @@ const instagramTestPosts = <InstagramPostData>[
     type: InstagramPostDataType.video,
   ),
   InstagramPostData(
-    coverUrl: '$_kPhotosPath/05.png?raw=true',
+    coverUrl: '$_kPhotosPath/05.jpg?raw=true',
     type: InstagramPostDataType.album,
   ),
   InstagramPostData(
-    coverUrl: '$_kPhotosPath/06.png?raw=true',
+    coverUrl: '$_kPhotosPath/06.jpg?raw=true',
     type: InstagramPostDataType.album,
   ),
   InstagramPostData(
@@ -39,7 +39,7 @@ const instagramTestPosts = <InstagramPostData>[
     type: InstagramPostDataType.album,
   ),
   InstagramPostData(
-    coverUrl: '$_kPhotosPath/10.jpg?raw=true',
+    coverUrl: '$_kPhotosPath/10.png?raw=true',
     type: InstagramPostDataType.photo,
   ),
   InstagramPostData(
