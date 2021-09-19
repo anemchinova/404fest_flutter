@@ -1,6 +1,8 @@
 import 'package:fest404/instagram/data/instagram_comment_data.dart';
 import 'package:fest404/instagram/data/instagram_profile_data.dart';
 
+part 'instagram_post_text.dart';
+
 const _kPhotosPath = 'https://github.com/anemchinova/404fest_flutter/blob/main/instagram_photos/';
 
 const instagramTestPosts = <InstagramPostData>[
@@ -9,14 +11,8 @@ const instagramTestPosts = <InstagramPostData>[
     type: InstagramPostDataType.album,
     author: testInstagramProfile,
     formattedDateTime: '2021-09-01',
-    description: 'Летом мы неистово готовились к главной IT-тусовке этой осени (угадайте какой), '
-        'погуляли на шикарной свадьбе наших друллег, сходили в поход вдоль берега Жигулевского моря и позвали в'
-        'гости меркурианцев из других городов.'
-        ''
-        'Фух, на одном дыхании! Теперь ваша очередь. Как прошло лето?'
-        ''
-        '#mercdev',
-    totalLikeCount: 2,
+    description: _post01,
+    totalLikeCount: 119,
     whoLiked: [artemKruppProfile, alenaNemchinovaProfile, sergeyLavinovProfile],
   ),
   InstagramPostData(
@@ -24,12 +20,14 @@ const instagramTestPosts = <InstagramPostData>[
     type: InstagramPostDataType.video,
     author: testInstagramProfile,
     formattedDateTime: '2021-07-29',
+    description: _post02,
   ),
   InstagramPostData(
     coverUrl: '$_kPhotosPath/03.png?raw=true',
     type: InstagramPostDataType.album,
     author: testInstagramProfile,
     formattedDateTime: '2021-09-01',
+    description: _post03,
   ),
   InstagramPostData(
     coverUrl: '$_kPhotosPath/04.png?raw=true',

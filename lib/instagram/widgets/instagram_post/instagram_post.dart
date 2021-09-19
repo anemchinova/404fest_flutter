@@ -31,8 +31,10 @@ class InstagramPost extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              if (post.totalLikeCount > 0) InstagramPostLikes(post: post),
-              const VerticalSpace(5),
+              if (post.totalLikeCount > 0) ...[
+                InstagramPostLikes(post: post),
+                const VerticalSpace(5),
+              ],
               InstagramPostDescription(post: post),
               if (post.comments.isNotEmpty) InstagramPostComments(post: post),
               const VerticalSpace(5),

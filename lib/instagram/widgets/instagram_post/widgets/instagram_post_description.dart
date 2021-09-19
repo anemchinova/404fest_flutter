@@ -30,11 +30,14 @@ class InstagramPostDescription extends StatelessWidget {
             text: post.author.username,
             style: mediumStyle,
           ),
-          if (post.description?.isNotEmpty == true) ...[
+          if (post.description?.isNotEmpty == true)
             TextSpan(
               text: ' ${post.description}',
+            )
+          else
+            const TextSpan(
+              text: ' опубликовал фото',
             ),
-          ]
         ],
       ),
     );
