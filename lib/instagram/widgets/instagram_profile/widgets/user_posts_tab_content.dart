@@ -1,4 +1,4 @@
-import 'package:fest404/instagram/instagram_post_data.dart';
+import 'package:fest404/instagram/data/instagram_post_data.dart';
 import 'package:fest404/instagram/widgets/instagram_profile/widgets/post_tile.dart';
 import 'package:fest404/instagram/widgets/nested_scroll_view/nested_scroll_view.dart' as x;
 import 'package:flutter/material.dart';

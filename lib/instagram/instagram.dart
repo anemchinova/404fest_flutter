@@ -1,4 +1,4 @@
-import 'package:fest404/instagram/instagram_profile_data.dart';
+import 'package:fest404/instagram/data/instagram_profile_data.dart';
 import 'package:fest404/instagram/widgets/instagram_fake_bottom_bar.dart';
 import 'package:fest404/instagram/widgets/instagram_profile/instagram_profile.dart';
 import 'package:fest404/instagram/widgets/instagram_profile_app_bar.dart';

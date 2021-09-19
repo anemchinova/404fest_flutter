@@ -1,12 +1,11 @@
 import 'package:fest404/core/widgets/svg_icon.dart';
+import 'package:fest404/instagram/data/instagram_profile_data.dart';
 import 'package:fest404/instagram/instagram_assets.dart';
-import 'package:fest404/instagram/instagram_profile_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class InstagramProfileAppBar extends StatelessWidget
-    implements PreferredSizeWidget {
+class InstagramProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
   const InstagramProfileAppBar({Key? key}) : super(key: key);
 
   @override
