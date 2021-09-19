@@ -4,8 +4,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
-class InstagramPostPage extends StatelessWidget {
-  const InstagramPostPage({Key? key}) : super(key: key);
+class InstagramPostsPage extends StatelessWidget {
+  const InstagramPostsPage({
+    Key? key,
+    this.initialPostIndex = 0,
+  }) : super(key: key);
+
+  final int initialPostIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +20,7 @@ class InstagramPostPage extends StatelessWidget {
       backgroundColor: Colors.black,
       body: SafeArea(
         child: ScrollablePositionedList.builder(
+          initialScrollIndex: initialPostIndex,
           itemCount: instagramTestPosts.length,
           itemBuilder: (context, index) => InstagramPost(post: posts[index]),
         ),
