@@ -1,4 +1,5 @@
-const _kProfilePath = 'https://github.com/anemchinova/404fest_flutter/blob/main/instagram_photos/';
+const _kProfilePath =
+    'https://github.com/anemchinova/404fest_flutter/blob/main/instagram_photos/';
 
 const mercuryProfile = InstagramProfileData(
   name: 'Mercury Development',
