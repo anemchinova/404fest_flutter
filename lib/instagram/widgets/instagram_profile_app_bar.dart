@@ -1,6 +1,7 @@
 import 'package:fest404/core/widgets/svg_icon.dart';
 import 'package:fest404/instagram/data/instagram_profile_data.dart';
 import 'package:fest404/instagram/instagram_assets.dart';
+import 'package:fest404/instagram/widgets/small_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -21,25 +22,21 @@ class InstagramProfileAppBar extends StatelessWidget implements PreferredSizeWid
       backgroundColor: Colors.transparent,
       elevation: 0.0,
       actions: [
-        CupertinoButton(
+        SmallButton(
           onPressed: () {},
           child: const SvgIcon(
             InstagramAssets.notifications,
             size: 20,
             color: Colors.white,
           ),
-          padding: EdgeInsets.zero,
-          minSize: 40,
         ),
-        CupertinoButton(
+        SmallButton(
           onPressed: () {},
           child: const SvgIcon(
             InstagramAssets.more,
             size: 20,
             color: Colors.white,
           ),
-          padding: EdgeInsets.zero,
-          minSize: 40,
         ),
       ],
     );

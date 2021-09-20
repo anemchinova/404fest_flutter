@@ -2,6 +2,7 @@ import 'package:fest404/core/widgets/svg_icon.dart';
 import 'package:fest404/instagram/data/instagram_post_data.dart';
 import 'package:fest404/instagram/instagram_assets.dart';
 import 'package:fest404/instagram/widgets/instagram_profile/widgets/instagram_profile_header/widgets/circle_photo.dart';
+import 'package:fest404/instagram/widgets/small_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -36,15 +37,13 @@ class InstagramPostHeader extends StatelessWidget {
               ],
             ),
           ),
-          CupertinoButton(
+          SmallButton(
             onPressed: () {},
             child: const SvgIcon(
               InstagramAssets.more,
               size: 20,
               color: Colors.white,
             ),
-            padding: EdgeInsets.zero,
-            minSize: 40,
           ),
         ],
       ),

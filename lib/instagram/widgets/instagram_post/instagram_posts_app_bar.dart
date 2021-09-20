@@ -31,12 +31,13 @@ class InstagramPostsAppBar extends StatelessWidget implements PreferredSizeWidge
           ),
         ],
       ),
-      bottom: PreferredSize(
-        child: Container(
+      bottom: const PreferredSize(
+        child: Divider(
           color: Colors.white12,
+          thickness: 1,
           height: 1,
         ),
-        preferredSize: const Size.fromHeight(1),
+        preferredSize: Size.fromHeight(1),
       ),
       backgroundColor: Colors.transparent,
       elevation: 0.0,
