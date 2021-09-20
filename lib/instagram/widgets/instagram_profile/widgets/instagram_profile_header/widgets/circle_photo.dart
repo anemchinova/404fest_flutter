@@ -28,6 +28,11 @@ class CirclePhoto extends StatelessWidget {
           padding: const EdgeInsets.all(3),
         );
 
+  const CirclePhoto.postAuthorAvatar({
+    Key? key,
+    String? imageUrl,
+  }) : this(key: key, imageUrl: imageUrl, radius: 16);
+
   CirclePhoto.highlightsCover({
     Key? key,
     String? imageUrl,
