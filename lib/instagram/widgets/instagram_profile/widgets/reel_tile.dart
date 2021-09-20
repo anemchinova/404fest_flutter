@@ -1,4 +1,4 @@
-import 'package:fest404/instagram/instagram_reel_data.dart';
+import 'package:fest404/instagram/data/instagram_reel_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
