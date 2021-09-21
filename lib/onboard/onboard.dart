@@ -16,8 +16,8 @@ class OnboardScreen extends StatelessWidget {
         colors: const [
           Colors.lightBlue,
           Colors.deepPurple,
+          Colors.pinkAccent,
           Colors.teal,
-          Colors.white,
         ],
         children: const [
           CubertoPage(

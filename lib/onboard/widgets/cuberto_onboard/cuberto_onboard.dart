@@ -1,7 +1,7 @@
 import 'package:fest404/onboard/widgets/cuberto_onboard/widgets/cuberto_animated_background.dart';
 import 'package:flutter/material.dart';
 
-class CubertoOnboard extends StatelessWidget {
+class CubertoOnboard extends StatefulWidget {
   const CubertoOnboard({
     required this.colors,
     required this.children,
@@ -17,11 +17,33 @@ class CubertoOnboard extends StatelessWidget {
   final List<Widget> children;
 
   @override
+  State<CubertoOnboard> createState() => _CubertoOnboardState();
+}
+
+class _CubertoOnboardState extends State<CubertoOnboard> {
+  late PageController _pageController;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController();
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return CubertoAnimatedBackground(
-      colors: colors,
+      colors: widget.colors,
+      pageController: _pageController,
       child: PageView(
-        children: children,
+        controller: _pageController,
+        physics: const ClampingScrollPhysics(),
+        children: widget.children,
       ),
     );
   }
