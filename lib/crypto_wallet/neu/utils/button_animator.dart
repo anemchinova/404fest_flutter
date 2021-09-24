@@ -30,12 +30,7 @@ class _CupertinoButtonState extends State<ButtonAnimator> with SingleTickerProvi
     super.initState();
     _animationController = widget.animationController;
   }
-
-  @override
-  void didUpdateWidget(ButtonAnimator old) {
-    super.didUpdateWidget(old);
-  }
-
+  
   @override
   void dispose() {
     _animationController.dispose();
