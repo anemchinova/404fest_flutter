@@ -16,7 +16,7 @@ class InstagramPostContent extends StatefulWidget {
 }
 
 class _InstagramPostContentState extends State<InstagramPostContent>
-    with TickerProviderStateMixin<InstagramPostContent> {
+    with SingleTickerProviderStateMixin<InstagramPostContent> {
   late AnimationController animationController;
 
   void showHeart() async {
@@ -78,12 +78,12 @@ class _InstagramAnimatedIcon extends StatelessWidget {
   final AnimationController animationController;
   final Widget child;
 
-  late final Animation<double> opacity = CurvedAnimation(
+  late final Animation<double> _opacity = CurvedAnimation(
     parent: Tween(begin: 0.0, end: 1.0).animate(animationController),
     curve: Curves.easeOutCubic,
     reverseCurve: Curves.easeOutCubic,
   );
-  late final Animation<double> scale = CurvedAnimation(
+  late final Animation<double> _scale = CurvedAnimation(
     parent: Tween(begin: 0.0, end: 1.0).animate(animationController),
     curve: Curves.elasticOut,
     reverseCurve: Curves.elasticOut,
@@ -91,18 +91,12 @@ class _InstagramAnimatedIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: animationController,
-      child: child,
-      builder: (BuildContext context, Widget? child) {
-        return Transform.scale(
-          scale: scale.value,
-          child: Opacity(
-            opacity: opacity.value,
-            child: child,
-          ),
-        );
-      },
+    return FadeTransition(
+      opacity: _opacity,
+      child: ScaleTransition(
+        scale: _scale,
+        child: child,
+      ),
     );
   }
 }
