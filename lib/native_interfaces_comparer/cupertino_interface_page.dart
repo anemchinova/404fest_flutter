@@ -16,12 +16,12 @@ class _CupertinoInterfacePageState extends State<CupertinoInterfacePage> {
   @override
   Widget build(BuildContext context) {
     return CupertinoApp(
-      theme: CupertinoThemeData(
+      theme: const CupertinoThemeData(
         brightness: Brightness.light,
       ),
       home: CupertinoPageScaffold(
         backgroundColor: Colors.white,
-        navigationBar: CupertinoNavigationBar(
+        navigationBar: const CupertinoNavigationBar(
           middle: Text('App bar'),
         ),
         child: SafeArea(
@@ -33,7 +33,7 @@ class _CupertinoInterfacePageState extends State<CupertinoInterfacePage> {
                 const VerticalSpace(13),
                 Expanded(
                   child: BaseLayout(
-                    textField: CupertinoTextField(
+                    textField: const CupertinoTextField(
                       enabled: false,
                       placeholder: 'Placeholder',
                     ),
@@ -49,13 +49,13 @@ class _CupertinoInterfacePageState extends State<CupertinoInterfacePage> {
                       width: double.infinity,
                       child: CupertinoButton(
                         onPressed: () {},
-                        child: Text('Text'),
+                        child: const Text('Text'),
                         color: Colors.blue,
                       ),
                     ),
                     textButton: CupertinoButton(
                       onPressed: () {},
-                      child: Text('Text'),
+                      child: const Text('Text'),
                     ),
                     slider: CupertinoSlider(
                       value: 50,

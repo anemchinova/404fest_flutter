@@ -41,14 +41,12 @@ class _NativeInterfacesComparerDemoPageState extends State<NativeInterfacesCompa
           },
           onPanUpdate: (details) {
             var width = MediaQuery.of(context).size.width;
-            print(width);
 
             animationController.value = ((width * animationController.value) + xAxisOffset) / width;
 
-            print(animationController.value);
             xAxisOffset = details.delta.dx;
           },
-          child: SizedBox.expand(),
+          child: const SizedBox.expand(),
         )
       ],
     );

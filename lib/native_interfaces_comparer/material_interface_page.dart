@@ -8,7 +8,7 @@ class MaterialInterfacePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('App bar'),
+        title: const Text('App bar'),
       ),
       body: SafeArea(
         child: Center(
@@ -18,7 +18,7 @@ class MaterialInterfacePage extends StatelessWidget {
             children: [
               Expanded(
                 child: BaseLayout(
-                  textField: TextField(
+                  textField: const TextField(
                     enabled: false,
                     decoration: InputDecoration(
                       labelText: 'Label',
@@ -36,13 +36,13 @@ class MaterialInterfacePage extends StatelessWidget {
                     width: double.infinity,
                     child: MaterialButton(
                       onPressed: () {},
-                      child: Text('Text'),
+                      child: const Text('Text'),
                       color: Colors.blue,
                     ),
                   ),
                   textButton: MaterialButton(
                     onPressed: () {},
-                    child: Text('Text'),
+                    child: const Text('Text'),
                   ),
                   slider: Slider(
                     value: 50,
