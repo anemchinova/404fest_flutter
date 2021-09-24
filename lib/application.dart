@@ -18,7 +18,13 @@ class Application extends StatelessWidget {
           brightness: Brightness.light,
           primarySwatch: Colors.blue,
         ),
-        home: const NativeInterfacesComparerDemoPage(),
+        builder: (context, child) {
+          return ScrollConfiguration(
+            behavior: const ScrollBehavior().copyWith(overscroll: false),
+            child: child ?? const SizedBox(),
+          );
+        },
+        home: const InstagramProfilePage(),
         debugShowCheckedModeBanner: false,
       ),
     );

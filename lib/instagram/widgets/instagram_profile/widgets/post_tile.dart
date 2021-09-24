@@ -16,19 +16,20 @@ class PostTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // caching bigger images for expanded posts list
+    final memCacheWidth = MediaQuery.of(context).size.width.toInt();
+
     return GestureDetector(
       onTap: onPressed,
       child: Stack(
         alignment: Alignment.topRight,
         children: [
           Positioned.fill(
-            child: LayoutBuilder(builder: (context, constraints) {
-              return CachedNetworkImage(
-                imageUrl: post.coverUrl,
-                fit: BoxFit.cover,
-                memCacheHeight: constraints.maxHeight.toInt(),
-              );
-            }),
+            child: CachedNetworkImage(
+              imageUrl: post.coverUrl,
+              fit: BoxFit.cover,
+              memCacheWidth: memCacheWidth,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),

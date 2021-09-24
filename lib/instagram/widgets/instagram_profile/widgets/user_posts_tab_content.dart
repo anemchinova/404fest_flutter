@@ -32,14 +32,13 @@ class UserPostsTabContent extends StatelessWidget {
           delegate: SliverChildBuilderDelegate(
             (context, index) {
               return PostTile(
-                post: posts[index],
+                post: posts[index % posts.length],
                 onPressed: () => navigatedToPostsPage(
                   context,
-                  postIndex: index,
+                  postIndex: index % posts.length,
                 ),
               );
             },
-            childCount: posts.length,
           ),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
