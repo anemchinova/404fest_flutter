@@ -25,19 +25,19 @@ class _CupertinoButtonState extends State<ButtonAnimator> with SingleTickerProvi
 
   late AnimationController _animationController;
 
+  bool _buttonHeldDown = false;
+
   @override
   void initState() {
     super.initState();
     _animationController = widget.animationController;
   }
-  
+
   @override
   void dispose() {
     _animationController.dispose();
     super.dispose();
   }
-
-  bool _buttonHeldDown = false;
 
   void _handleTapDown(TapDownDetails event) {
     if (!_buttonHeldDown) {
