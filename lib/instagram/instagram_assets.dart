@@ -12,4 +12,5 @@ abstract class InstagramAssets {
   static const String playOutline = '$_kPath/play_outline.svg';
   static const String reels = '$_kPath/reels.svg';
   static const String search = '$_kPath/search.svg';
+  static const String icon = '$_kPath/instagram.svg';
 }

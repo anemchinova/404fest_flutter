@@ -16,10 +16,7 @@ class CubertoAppBar extends StatelessWidget implements PreferredSizeWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text('404 fest'),
-              Text('Skip'),
-            ],
+            children: const [],
           ),
         ),
       ),
