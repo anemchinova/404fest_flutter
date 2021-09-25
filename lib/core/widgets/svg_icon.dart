@@ -19,7 +19,7 @@ class SvgIcon extends StatelessWidget {
       asset,
       width: size,
       height: size,
-      color: color ?? IconTheme.of(context).color,
+      color: color,
     );
   }
 }
