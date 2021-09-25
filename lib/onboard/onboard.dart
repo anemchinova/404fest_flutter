@@ -64,6 +64,7 @@ class OnboardScreen extends StatelessWidget {
                   child: const SvgIcon(
                     InstagramAssets.icon,
                     size: 60,
+                    color: null,
                   ),
                   padding: EdgeInsets.zero,
                   minSize: 40,
