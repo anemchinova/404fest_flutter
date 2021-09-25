@@ -5,6 +5,7 @@ import 'package:fest404/crypto_wallet/neu/neu.dart';
 import 'package:fest404/crypto_wallet/widgets/resources.dart';
 import 'package:fest404/instagram/instagram_assets.dart';
 import 'package:fest404/instagram/widgets/instagram_profile/instagram_profile_page.dart';
+import 'package:fest404/native_interfaces_comparer/native_interface_comparer.dart';
 import 'package:fest404/onboard/widgets/cuberto_app_bar.dart';
 import 'package:fest404/onboard/widgets/cuberto_onboard/cuberto_onboard.dart';
 import 'package:fest404/onboard/widgets/cuberto_page.dart';
@@ -33,7 +34,7 @@ class OnboardScreen extends StatelessWidget {
   void navigatedToNativeSwipe(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute<InstagramProfilePage>(
-        builder: (context) => const InstagramProfilePage(),
+        builder: (context) => const NativeInterfacesComparerDemoPage(),
       ),
     );
   }
