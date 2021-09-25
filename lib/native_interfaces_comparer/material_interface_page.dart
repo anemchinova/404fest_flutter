@@ -6,53 +6,58 @@ class MaterialInterfacePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('App bar'),
+    return Theme(
+      data: ThemeData(
+        brightness: Brightness.light,
       ),
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Expanded(
-                child: BaseLayout(
-                  textField: const TextField(
-                    enabled: false,
-                    decoration: InputDecoration(
-                      labelText: 'Label',
-                      alignLabelWithHint: true,
-                      hintText: 'Hint',
-                      helperText: 'Helper',
-                      errorText: null,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('App bar'),
+        ),
+        body: SafeArea(
+          child: Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: BaseLayout(
+                    textField: const TextField(
+                      enabled: false,
+                      decoration: InputDecoration(
+                        labelText: 'Label',
+                        alignLabelWithHint: true,
+                        hintText: 'Hint',
+                        helperText: 'Helper',
+                        errorText: null,
+                      ),
                     ),
-                  ),
-                  switcher: Switch(
-                    value: true,
-                    onChanged: (_) {},
-                  ),
-                  button: SizedBox(
-                    width: double.infinity,
-                    child: MaterialButton(
+                    switcher: Switch(
+                      value: true,
+                      onChanged: (_) {},
+                    ),
+                    button: SizedBox(
+                      width: double.infinity,
+                      child: MaterialButton(
+                        onPressed: () {},
+                        child: const Text('Text'),
+                        color: Colors.blue,
+                      ),
+                    ),
+                    textButton: MaterialButton(
                       onPressed: () {},
                       child: const Text('Text'),
-                      color: Colors.blue,
+                    ),
+                    slider: Slider(
+                      value: 50,
+                      max: 100,
+                      min: 0,
+                      onChanged: (_) {},
                     ),
                   ),
-                  textButton: MaterialButton(
-                    onPressed: () {},
-                    child: const Text('Text'),
-                  ),
-                  slider: Slider(
-                    value: 50,
-                    max: 100,
-                    min: 0,
-                    onChanged: (_) {},
-                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

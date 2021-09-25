@@ -17,7 +17,9 @@ class DashboardAppBar extends StatelessWidget {
       backgroundColor: Colors.transparent,
       leading: Center(
         child: CupertinoButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
           padding: EdgeInsets.zero,
           child: const Icon(
             CupertinoIcons.back,

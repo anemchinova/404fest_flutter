@@ -21,8 +21,15 @@ class _CupertinoInterfacePageState extends State<CupertinoInterfacePage> {
       ),
       home: CupertinoPageScaffold(
         backgroundColor: Colors.white,
-        navigationBar: const CupertinoNavigationBar(
-          middle: Text('App bar'),
+        navigationBar: CupertinoNavigationBar(
+          middle: const Text('App bar'),
+          leading: CupertinoButton(
+            child: const Text('Close'),
+            padding: EdgeInsets.zero,
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
         ),
         child: SafeArea(
           child: Center(

@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 class SvgIcon extends StatelessWidget {
   const SvgIcon(
     this.asset, {
-    this.color,
+    this.color = Colors.white,
     this.size,
     Key? key,
   }) : super(key: key);
