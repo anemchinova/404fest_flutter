@@ -13,7 +13,7 @@ class Application extends StatelessWidget {
       child: MaterialApp(
         title: '404 Demo App',
         theme: ThemeData(
-          brightness: Brightness.dark,
+          brightness: Brightness.light,
           primarySwatch: Colors.blue,
         ),
         builder: (context, child) {
